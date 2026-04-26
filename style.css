@@ -1,0 +1,255 @@
+:root {
+    --white: #ffffff;
+    --black: #1a1a1a;
+    --gold: #d4af37;
+    --beige: #f5f5dc;
+    --gray: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    align-items: center;
+    background: var(--white);
+    border-bottom: 1px solid var(--beige);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.logo span { color: var(--gold); }
+
+.nav-links { list-style: none; display: flex; }
+.nav-links li { margin: 0 20px; }
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--black); 
+    font-weight: 400;
+    transition: 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1rem; }
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--gold);
+    color: var(--white);
+    text-decoration: none;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover { background: var(--black); border: 1px solid var(--gold); }
+
+/* Productos */
+.products { padding: 80px 10%; background: var(--gray); }
+.section-title { text-align: center; margin-bottom: 50px; font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    padding: 20px;
+    text-align: center;
+    border: 1px solid var(--beige);
+    transition: transform 0.3s;
+}
+
+.product-card:hover { transform: translateY(-10px); }
+
+.product-img { height: 300px; margin-bottom: 15px; }
+
+.price { color: var(--gold); font-weight: 600; margin: 10px 0; }
+
+.btn-add {
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Contacto */
+.contact-section { padding: 80px 10%; background: var(--white); }
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.contact-info, .contact-form { flex: 1; min-width: 300px; }
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--beige);
+    background: var(--gray);
+}
+
+.btn-submit {
+    background: var(--gold);
+    color: var(--white);
+    border: none;
+    padding: 15px 40px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Botón de WhatsApp Flotante */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366; /* Verde oficial de WhatsApp */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: var(--gold); /* Cambia a dorado al pasar el mouse para combinar con tu marca */
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Ajuste para móviles */
+@media screen and (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Contenedor del Formulario */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    background-color: #1a1a1a; /* El "negro claro" */
+    padding: 60px;
+    border-radius: 15px;
+    border: 1px solid var(--gold); /* Un toque sutil de dorado en el borde */
+}
+
+.contact-info h2, .contact-info p {
+    color: var(--white); /* Texto blanco para que resalte */
+}
+
+/* Campos de texto en Blanco */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: var(--white); /* Fondo blanco para los inputs */
+    color: var(--black); /* Texto oscuro al escribir */
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo al hacer clic en los campos */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: 2px solid var(--gold);
+    background-color: #ffffff;
+}
+
+/* Ajuste del botón para que resalte más */
+.btn-submit {
+    background: var(--gold);
+    color: var(--black); /* Texto negro para contraste */
+    border: none;
+    padding: 15px 40px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: var(--beige);
+    color: var(--black);
+}
+
+/* Estilo para el botón de WhatsApp en cada producto */
+.btn-whatsapp-item {
+    display: block;
+    background-color: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid var(--gold);
+    transition: 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-whatsapp-item:hover {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+/* Eliminamos estilos del carrito que ya no usaremos */
+.cart-icon { display: none; }
